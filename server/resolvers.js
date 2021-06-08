@@ -13,8 +13,6 @@ export const resolvers = {
                     else resolve(country)
                 });
             })
-
-
         },
         getContinent: (root, { code }) => {
             return new Promise(( resolve, object) => {
@@ -23,8 +21,6 @@ export const resolvers = {
                     else resolve(continent)
                 });
             })
-
-
         },
         getLanguage: (root, { code }) => {
             return new Promise(( resolve, object) => {
@@ -33,8 +29,6 @@ export const resolvers = {
                     else resolve(language)
                 });
             })
-
-
         },
         getCountries: () => Countries.find(),
         getContinents: () => Continents.find(),
@@ -52,7 +46,7 @@ export const resolvers = {
         },
         addCountry: (_, {input}) => {
             return new Promise(( resolve, object) => {
-                Countries.create({code: input.code, name: input.name, native: input.native, phone: input.phone, capital: input.phone, currency: input.currency, languages: input.languages, emoji: input.emoji}, function (err, obj) {
+                Countries.create({code: input.code, name: input.name, native: input.native, phone: input.phone, capital: input.capital, currency: input.currency, languages: input.languages, emoji: input.emoji, continent: input.continent}, function (err, obj) {
                     if (err) _.reject(err)
                     else return resolve(obj)
                 });
@@ -66,9 +60,7 @@ export const resolvers = {
                 });
             })
         },
-
     }
-
 };
 
 
