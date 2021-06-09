@@ -33,6 +33,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+'/build/index.html'));
 });
 
-app.listen(8080, () => console.log('Running on server post localhost:8080/graphql'));
+app.listen(process.env.PORT || 8080, () => console.log('Running on server post localhost:8080/graphql'));
 
 
