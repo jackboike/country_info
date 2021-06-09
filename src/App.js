@@ -8,6 +8,7 @@ import {
   gql
 } from "@apollo/client";
 import CountryList from "./components/CountryList";
+import React from 'react';
 
 
 function App() {

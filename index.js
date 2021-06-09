@@ -17,7 +17,7 @@ app.use('/graphql/', graphqlHTTP({
     graphiql: true,
 }))
 
-app.use(express.static(path.join(__dirname + '/client/build')));
+app.use(express.static(path.join(__dirname + '/build')));
 
 app.use(bodyParser.json());
 
@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.sendFile(path.join(__dirname+'/build/index.html'));
 });
 
 app.listen(8080, () => console.log('Running on server post localhost:8080/graphql'));
